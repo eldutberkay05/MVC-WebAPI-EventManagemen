@@ -37,11 +37,7 @@ The project demonstrates modern client-server architecture, API consumption, DTO
 
 </p>
 
-<p align="center">
 
-
-<img width="554" height="404" alt="Ekran görüntüsü 2026-07-06 231206" src="https://github.com/user-attachments/assets/99224eda-8cf2-42e0-91c5-e22af54fbf87" />
-</p>
 
 ---
 
