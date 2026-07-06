@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37216.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventReservationMVC", "EventReservationMVC\EventReservationMVC.csproj", "{22DD1DE7-E17F-4593-88C8-593DE1A74DDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventReservationAPI", "EventReservationAPI\EventReservationAPI.csproj", "{8E5328DF-846B-4241-8101-17FA0CC519CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22DD1DE7-E17F-4593-88C8-593DE1A74DDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22DD1DE7-E17F-4593-88C8-593DE1A74DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22DD1DE7-E17F-4593-88C8-593DE1A74DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22DD1DE7-E17F-4593-88C8-593DE1A74DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E5328DF-846B-4241-8101-17FA0CC519CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E5328DF-846B-4241-8101-17FA0CC519CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E5328DF-846B-4241-8101-17FA0CC519CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E5328DF-846B-4241-8101-17FA0CC519CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C28E19E-2520-4D82-8C6D-5F2FC5F8522C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,45 @@
+﻿@model EventReservationMVC.Dtos.VenueDto
+
+@{
+    ViewData["Title"] = "Mekan Güncelle";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header text-dark rounded-top-4" style="background: linear-gradient(135deg, #ffc107, #fd7e14);">
+            <h3 class="mb-0">Mekan Güncelle</h3>
+        </div>
+
+        <div class="card-body">
+
+            <form method="post">
+
+                <input type="hidden" asp-for="VenueId" />
+
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label class="form-label">Mekan Adı</label>
+                    <input asp-for="VenueName" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Konum</label>
+                    <input asp-for="Location" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Kapasite</label>
+                    <input asp-for="Capacity" class="form-control" />
+                </div>
+
+                <button type="submit" class="btn btn-warning">Güncelle</button>
+                <a href="/Venues/Index" class="btn btn-secondary">Geri Dön</a>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>

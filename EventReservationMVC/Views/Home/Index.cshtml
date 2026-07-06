@@ -1,0 +1,158 @@
+﻿@model List<EventReservationMVC.Models.Event>
+
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<div class="container mt-4">
+
+    <div class="p-5 mb-4 text-white rounded-4 shadow-lg"
+         style="background: linear-gradient(135deg, #6f42c1, #0d6efd, #20c997);">
+
+        <div class="container-fluid py-4">
+            <h1 class="display-5 fw-bold">Etkinlik Rezervasyon Sistemi</h1>
+            <p class="col-md-8 fs-5">
+                Konser, tiyatro, seminer ve workshop gibi etkinlikleri yönetebileceğin modern MVC projesi.
+            </p>
+
+            <div class="mt-4">
+                <a href="/Events/Index" class="btn btn-light btn-lg fw-bold me-2">
+                    Etkinlikleri Yönet
+                </a>
+
+                <a href="/Categories/Index" class="btn btn-outline-light btn-lg fw-bold">
+                    Kategoriler
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+
+        <div class="col-md-4 mb-3">
+            <div class="card border-0 shadow rounded-4 text-center">
+                <div class="card-body">
+                    <h5 class="text-muted">Kategori Sayısı</h5>
+                    <h2 class="fw-bold text-primary">@ViewBag.CategoryCount</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card border-0 shadow rounded-4 text-center">
+                <div class="card-body">
+                    <h5 class="text-muted">Mekan Sayısı</h5>
+                    <h2 class="fw-bold text-success">@ViewBag.VenueCount</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card border-0 shadow rounded-4 text-center">
+                <div class="card-body">
+                    <h5 class="text-muted">Etkinlik Sayısı</h5>
+                    <h2 class="fw-bold text-danger">@ViewBag.EventCount</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card border-0 shadow-lg rounded-4 mb-4">
+        <div class="card-header text-white rounded-top-4"
+             style="background: linear-gradient(135deg, #212529, #495057);">
+            <h3 class="mb-0">Admin Paneli</h3>
+        </div>
+
+        <div class="card-body">
+            <div class="row text-center">
+
+                <div class="col-md-4 mb-3">
+                    <a href="/Categories/Index" class="btn btn-primary w-100 py-3 fw-bold rounded-4">
+                        Kategoriler
+                    </a>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <a href="/Venues/Index" class="btn btn-success w-100 py-3 fw-bold rounded-4">
+                        Mekanlar
+                    </a>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <a href="/Events/Index" class="btn btn-danger w-100 py-3 fw-bold rounded-4">
+                        Etkinlikler
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <h3 class="mb-3 fw-bold">Etkinlikler</h3>
+
+    <div class="row">
+
+        @if (Model.Count == 0)
+        {
+            <div class="col-12">
+                <div class="alert alert-warning rounded-4">
+                    Henüz etkinlik eklenmemiş. Etkinlik eklemek için admin panelinden devam edebilirsin.
+                </div>
+            </div>
+        }
+        else
+        {
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow rounded-4">
+
+                        <div class="card-header text-white rounded-top-4"
+                             style="background: linear-gradient(135deg, #fd7e14, #dc3545);">
+                            <h5 class="mb-0">@item.EventName</h5>
+                        </div>
+
+                        <div class="card-body">
+
+                            <p>
+                                <strong>Kategori:</strong>
+                                @item.Category?.CategoryName
+                            </p>
+
+                            <p>
+                                <strong>Mekan:</strong>
+                                @item.Venue?.VenueName
+                            </p>
+
+                            <p>
+                                <strong>Konum:</strong>
+                                @item.Venue?.Location
+                            </p>
+
+                            <p>
+                                <strong>Tarih:</strong>
+                                @item.EventDate.ToString("dd.MM.yyyy")
+                            </p>
+
+                            <p>
+                                <strong>Bilet Fiyatı:</strong>
+                                @item.TicketPrice ₺
+                            </p>
+
+                        </div>
+
+                        <div class="card-footer bg-white border-0">
+                            <a href="/Events/Edit/@item.EventId" class="btn btn-warning w-100 rounded-4 fw-bold">
+                                Etkinliği Güncelle
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
+
+</div>

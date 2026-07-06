@@ -1,0 +1,57 @@
+﻿@model List<EventReservationMVC.Dtos.EventDto
+
+@{
+    ViewData["Title"] = "Etkinlik Ekle";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header text-white rounded-top-4" style="background: linear-gradient(135deg, #198754, #20c997);">
+            <h3 class="mb-0">Yeni Etkinlik Ekle</h3>
+        </div>
+
+        <div class="card-body">
+
+            <form method="post">
+
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label class="form-label">Etkinlik Adı</label>
+                    <input asp-for="EventName" class="form-control" placeholder="Örn: Yazılım Semineri" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Etkinlik Tarihi</label>
+                    <input asp-for="EventDate" type="date" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Bilet Fiyatı</label>
+                    <input asp-for="TicketPrice" class="form-control" placeholder="Örn: 250" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Kategori</label>
+                    <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-control">
+                        <option value="">Kategori seçiniz</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Mekan</label>
+                    <select asp-for="VenueId" asp-items="ViewBag.Venues" class="form-control">
+                        <option value="">Mekan seçiniz</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-success">Kaydet</button>
+                <a href="/Events/Index" class="btn btn-secondary">Geri Dön</a>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
